@@ -1,0 +1,1 @@
+/home/ryujin/zepp-rice/cfg/awesome/custom_theme.lua

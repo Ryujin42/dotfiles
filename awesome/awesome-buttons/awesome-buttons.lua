@@ -1,0 +1,1 @@
+/home/ryujin/zepp-rice/cfg/awesome/awesome-buttons/awesome-buttons.lua
