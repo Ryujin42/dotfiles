@@ -1,0 +1,1 @@
+/home/ryujin/.config/nvim/lua/plugins/configs/lspconfig.lua

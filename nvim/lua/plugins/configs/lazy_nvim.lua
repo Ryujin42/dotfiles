@@ -1,0 +1,1 @@
+/home/ryujin/.config/nvim/lua/plugins/configs/lazy_nvim.lua

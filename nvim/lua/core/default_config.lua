@@ -1,0 +1,1 @@
+/home/ryujin/.config/nvim/lua/core/default_config.lua

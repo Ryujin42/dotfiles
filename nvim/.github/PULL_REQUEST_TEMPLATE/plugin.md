@@ -1,0 +1,1 @@
+/home/ryujin/.config/nvim/.github/PULL_REQUEST_TEMPLATE/plugin.md
