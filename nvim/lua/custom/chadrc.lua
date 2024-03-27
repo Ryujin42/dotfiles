@@ -1,1 +1,6 @@
-/home/ryujin/.config/nvim/lua/custom/chadrc.lua
+---@type ChadrcConfig
+local M = {}
+
+M.ui = { theme = 'catppuccin' }
+
+return M

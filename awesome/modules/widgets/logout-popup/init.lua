@@ -1,1 +1,1 @@
-/home/ryujin/zepp-rice/cfg/awesome/modules/widgets/logout-popup/init.lua
+require("modules.widgets.logout-popup.logout-popup")

@@ -1,1 +1,1 @@
-/home/ryujin/zepp-rice/cfg/awesome/ui/bar/init.lua
+require "ui.bar.bar"
