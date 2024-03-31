@@ -158,8 +158,8 @@ local function widget(args)
                 image = icon,
                 widget = wibox.widget.imagebox
             },
-            top = 10,
-            bottom = 10,
+            top = 0,
+            bottom = 0,
             layout = wibox.container.margin
         },
         layout = wibox.layout.fixed.horizontal,

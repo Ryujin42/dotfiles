@@ -63,6 +63,8 @@ theme.border_marked = "#91231c"
 -- notification_[width|height|margin]
 -- notification_[border_color|border_width|shape|opacity]
 
+theme.notification_max_width = 400
+theme.notification_max_height = 200
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
@@ -103,7 +105,7 @@ theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/m
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
 theme.wallpaper = local_path.."assets/ryujin/wallpaper.png"
---theme.wallpaper = "/home/ryujin/Downloads/rn_image_picker_lib_temp_29bba33b-dc92-4ae8-94a6-52f1903ef655.jpg"
+--theme.wallpaper = "/home/ryujin/Images/pokemon.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"

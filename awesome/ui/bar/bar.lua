@@ -74,7 +74,8 @@ function set_bar(s)
                 {
                     -- Left widgets
                     layout = wibox.layout.fixed.horizontal,
-                    add_element(get_launcher(), gears.shape.rounded_rect),
+                    --add_element(get_launcher(), gears.shape.rounded_rect),
+                    logout_popup.widget{icon=beautiful.main_logo},
                     add_space(5),
                     add_element(taglist(s)),
                 },
@@ -110,8 +111,8 @@ function set_bar(s)
                     add_element(battery_widget()),
                     add_space(5),
                     -- add_element(logout(s),gears.shape.circle, 12),
-                    logout_popup.widget{icon=beautiful.power_button},
-                    add_space(5),
+                    --logout_popup.widget{icon=beautiful.power_button},
+                    --add_space(5),
                 },
             },
         },
