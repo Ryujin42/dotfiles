@@ -34,14 +34,14 @@ function taglist(s)
         },
         widget_template = {
             {
-                {
-                    {
-                        id = 'icon_role',
-                        widget = wibox.widget.textbox,
-                    },
-                    margins = 2,
-                    widget = wibox.container.margin,
-                },
+                -- {
+                --     {
+                --         id = 'icon_role',
+                --         widget = wibox.widget.textbox,
+                --     },
+                --     margins = 2,
+                --     widget = wibox.container.margin,
+                -- },
                 {
                     id = 'text_role',
                     widget = wibox.widget.textbox,
@@ -49,8 +49,8 @@ function taglist(s)
                 },
                 layout = wibox.layout.fixed.horizontal,
             },
-            left = 6,
-            right = 3,
+            left = 5,
+            right = 2,
             widget = wibox.container.margin,
             create_callback = function(self, tag, index, tags)
                 if tag.selected then

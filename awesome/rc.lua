@@ -72,8 +72,8 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.spiral.dwindle,
     awful.layout.suit.tile,
+    awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.tile.left,
     --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
@@ -142,8 +142,8 @@ end)
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
     awful.button({}, 3, function() mymainmenu:toggle() end),
-    awful.button({}, 4, awful.tag.viewnext),
-    awful.button({}, 5, awful.tag.viewprev)
+    awful.button({}, 5, awful.tag.viewnext),
+    awful.button({}, 4, awful.tag.viewprev)
 ))
 -- }}}
 
@@ -200,9 +200,9 @@ globalkeys = gears.table.join(
         { description = "reload awesome", group = "awesome" }),
     -- awful.key({ modkey, "Shift" }, "q", awesome.quit,
     --     { description = "quit awesome", group = "awesome" }),
-    awful.key({ modkey, }, "l", function() awful.tag.incmwfact(0.05) end,
+    awful.key({ modkey, }, "l", function() awful.tag.incmwfact(0.01) end,
         { description = "increase master width factor", group = "layout" }),
-    awful.key({ modkey, }, "h", function() awful.tag.incmwfact(-0.05) end,
+    awful.key({ modkey, }, "h", function() awful.tag.incmwfact(-0.01) end,
         { description = "decrease master width factor", group = "layout" }),
     awful.key({ modkey, "Shift" }, "h", function() awful.tag.incnmaster(1, nil, true) end,
         { description = "increase the number of master clients", group = "layout" }),
@@ -265,11 +265,14 @@ globalkeys = gears.table.join(
     awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("brightnessctl s 10%+") end,
         { description = "raise brightness by 10%", group = "custom"}),
         
-    awful.key({ modkey }, "l", function() logout_popup.launch() end,
-        {description = "Show logout screen", group = "custom"}),
+    -- awful.key({ modkey }, "l", function() logout_popup.launch() end,
+    --     {description = "Show logout screen", group = "custom"}),
     
     awful.key({ }, "Print", function () awful.util.spawn("flameshot gui") end,
-        { description = "print screen launch ksnapshot", group = "custom"})
+        { description = "Print screen launch ksnapshot", group = "custom"}),
+
+    awful.key({ }, "140", function () awful.util.spawn("galculator") end,
+        { description = "Open a calculator", group = "custom" })
 )
 
 clientkeys = gears.table.join(
@@ -451,7 +454,7 @@ awful.rules.rules = {
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function(c)
     c.shape = function(cr, w, h)
-        gears.shape.rounded_rect(cr, w, h, 15)
+        gears.shape.rounded_rect(cr, w, h, 0)
     end
 
     
