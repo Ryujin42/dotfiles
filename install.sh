@@ -10,8 +10,7 @@ ln -s ~/dotfiles/nvim ~/.config/
 ln -s ~/dotfiles/rofi ~/.config/
 
 # install everything
-yay -Sy rofi brave-bin noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-jetbrains-mono ttf-jetbrains-mono-nerd zsh zoxide fzf neofetch brightnessctl nautilus discord pavucontrol tree btop galculator flameshot code filezilla arandr autorandr
-
+yay -Sy arandr autorandr brave-bin brightnessctl btop code discord filezilla flameshot fzf galculator nautilus neofetch noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra pavucontrol rofi tree ttf-jetbrains-mono ttf-jetbrains-mono-nerd zoxide zsh
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp ~/dotfiles/.zshrc ~
