@@ -1,1 +1,0 @@
-require("modules.widgets.logout-popup.logout-popup")
