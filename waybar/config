@@ -1,0 +1,58 @@
+{
+    "position": "top",
+    "height": 35,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "battery"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    "clock": {
+        "format": "{:%a %d-%m-%Y %H:%M:%S}",
+        "tooltip": false,
+        "interval": 1
+    },
+
+    "cpu": {
+        "format": "{usage}%",
+        "tooltip": false,
+        "interval": 1
+    },
+
+    "memory": {
+        "format": "{used:5} GiB",
+        "tooltip": false,
+        "interval": 1
+    },
+
+    "battery": {
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format-icons": {
+            "charging": "",
+            "discharging": ["", "", "", "", ""]
+        },
+        "interval": 1
+    }
+}
+

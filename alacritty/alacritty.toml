@@ -1,5 +1,5 @@
 [font]
-size = 10
+size = 16
 
 [colors.primary]
 background = "#1E1E2E"
@@ -41,7 +41,7 @@ background = "#F5E0DC"
 
 [colors.normal]
 black = "#45475A"
-red = "#F38BA8"
+red = "#F34B68"
 green = "#A6E3A1"
 yellow = "#F9E2AF"
 blue = "#89B4FA"
@@ -51,7 +51,7 @@ white = "#BAC2DE"
 
 [colors.bright]
 black = "#585B70"
-red = "#F38BA8"
+red = "#F34B68"
 green = "#A6E3A1"
 yellow = "#F9E2AF"
 blue = "#89B4FA"
@@ -61,7 +61,7 @@ white = "#A6ADC8"
 
 [colors.dim]
 black = "#45475A"
-red = "#F38BA8"
+red = "#F34B68"
 green = "#A6E3A1"
 yellow = "#F9E2AF"
 blue = "#89B4FA"

@@ -1,0 +1,56 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.2);  /* Transparent background */
+    border-radius: 10px;  /* Rounded corners */
+    padding: 5px;
+}
+
+#workspaces button {
+    background-color: rgba(255, 255, 255, 0.1);  /* Slight background for inactive workspaces */
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-right: 0;  /* Remove space between workspaces */
+}
+
+#workspaces button.active,
+#workspaces button.active:hover {
+    background: linear-gradient(135deg, #58add6, #e28de4);  /* Gradient background for focused workspace */
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border: inherit;
+}
+
+#clock {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 5px 15px;
+}
+
+#cpu, #memory, #battery {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+#battery.critical {
+    color: #ff5555;  /* Red for critical battery */
+}
+
+#battery.charging {
+    color: #ffff55;  /* Yellow for charging */
+}
+
+#battery.discharging {
+    color: #55ff55;  /* Green for discharging */
+}
+
