@@ -244,8 +244,8 @@ globalkeys = gears.table.join(
         end,
         { description = "lua execute prompt", group = "awesome" }),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-        { description = "show the menubar", group = "launcher" }),
+    -- awful.key({ modkey, shift }, "p", function() menubar.show() end,
+    --     { description = "show the menubar", group = "launcher" }),
 
 
     -- custom
@@ -265,8 +265,8 @@ globalkeys = gears.table.join(
     awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("brightnessctl s 10%+") end,
         { description = "raise brightness by 10%", group = "custom"}),
         
-    -- awful.key({ modkey }, "l", function() logout_popup.launch() end,
-    --     {description = "Show logout screen", group = "custom"}),
+    awful.key({ modkey }, "p", function() logout_popup.launch() end,
+        {description = "Show logout screen", group = "custom"}),
     
     awful.key({ }, "Print", function () awful.util.spawn("flameshot gui") end,
         { description = "Print screen launch ksnapshot", group = "custom"}),
@@ -484,4 +484,16 @@ client.connect_signal("focus", function(c)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.spawn.with_shell("picom -b --config  $HOME/.config/awesome/config/picom.conf")
+-- {{{ run commands on startup
+-- animations
+awful.spawn.with_shell("picom -b --config $HOME/.config/awesome/config/picom.conf")
+
+-- alt + shift for toggle fr/us kb layout
+awful.spawn.with_shell("setxkbmap -layout fr,us -option grp:alt_shift_toggle")
+
+-- enable touchpad
+awful.spawn.with_shell('xinput set-prop "$(xinput list --name-only | grep -i touch)" "libinput Tapping Enabled" 1')
+
+-- setup double monitor
+awful.spawn.with_shell("autorandr -l dual --force")
+

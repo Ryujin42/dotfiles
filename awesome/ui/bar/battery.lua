@@ -13,8 +13,8 @@ function battery_widget()
         autostart = true,
         callback = function()
             collectgarbage("collect")
-            local stat = awful.spawn.easy_async("cat /sys/class/power_supply/BAT0/capacity", function(stdout)
-		    local get_voltage = awful.spawn.easy_async("cat /sys/class/power_supply/BAT0/status", function(volt)
+            local stat = awful.spawn.easy_async("cat /sys/class/power_supply/BAT1/capacity", function(stdout)
+		    local get_voltage = awful.spawn.easy_async("cat /sys/class/power_supply/BAT1/status", function(volt)
 		    battery_voltage = volt:sub(1, -2)
 		end)
 			
