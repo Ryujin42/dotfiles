@@ -8,11 +8,19 @@
         "clock"
     ],
     "modules-right": [
+        "custom/music-prev",
+        "custom/music-playpause",
+        "custom/music-next",
+        "custom/music-title",
+        "custom/volume",
+        "bluetooth",
+        "network",
         "cpu",
         "memory",
         "battery"
     ],
 
+    // modules-left
     "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate",
@@ -23,9 +31,59 @@
         }
     },
 
+    // modules-center
     "clock": {
         "format": "{:%a %d-%m-%Y %H:%M:%S}",
         "tooltip": false,
+        "interval": 1
+    },
+
+    // modules-right
+    "custom/music-prev": {
+        "format": "",
+        "on-click": "playerctl previous",
+        "tooltip": false
+    },
+
+    "custom/music-playpause": {
+        "exec": "~/.config/waybar/music/play-pause.sh",
+        "on-click": "playerctl play-pause",
+        "tooltip": false,
+        "interval": 1
+    },
+
+    "custom/music-next": {
+        "format": "",
+        "on-click": "playerctl next",
+        "tooltip": false
+    },
+
+    "custom/music-title": {
+        "exec": "~/.config/waybar/music/title.sh",
+        "interval": 1
+    },
+
+    "custom/volume": {
+        "exec": "~/.config/waybar/volume.sh",
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer --increase 5",
+        "on-scroll-down": "pamixer --decrease 5",
+        "interval": 1
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "tooltip": false,
+        "on-click": "blueman-manager",
+        "interval": 1
+    },
+
+    "network": {
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": "󰈀  {cidr}",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+        "format-disconnected": "󰖪  Disconnected",
+        "on-click": "nm-connection-editor",
         "interval": 1
     },
 
@@ -36,7 +94,7 @@
     },
 
     "memory": {
-        "format": "{used:5} GiB",
+        "format": "{used} GiB",
         "tooltip": false,
         "interval": 1
     },
