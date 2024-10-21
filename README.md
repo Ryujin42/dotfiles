@@ -2,9 +2,12 @@
 
 ## General informations
 - OS: [Arch Linux](https://archlinux.org/)
-- WM: [hyprland](https://hyprland.org/)
-- bar: [waybar](https://github.com/Alexays/Waybar)
-- launcher: [rofi](https://github.com/davatorium/rofi)
+- WM: [Hyprland](https://hyprland.org/)
+- bar: [Waybar](https://github.com/Alexays/Waybar)
+- launcher: [Rofi](https://github.com/davatorium/rofi)
+- terminal: [Alacritty](https://github.com/alacritty/alacritty)
+
+- general theme: [Catpuccin Macchiato](https://github.com/catppuccin/catppuccin)
 
 ## Arch install
 
