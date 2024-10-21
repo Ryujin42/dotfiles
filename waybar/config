@@ -1,6 +1,6 @@
 {
     "position": "top",
-    "height": 35,
+    "height": 36,
     "modules-left": [
         "hyprland/workspaces"
     ],
@@ -12,6 +12,7 @@
         "custom/music-playpause",
         "custom/music-next",
         "custom/music-title",
+        "custom/music-progress",
         "custom/volume",
         "bluetooth",
         "network",
@@ -24,8 +25,8 @@
     "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "on-scroll-up": "hyprctl dispatch workspace -1",
+        "on-scroll-down": "hyprctl dispatch workspace +1",
         "persistent-workspaces": {
             "*": 5
         }
@@ -34,15 +35,17 @@
     // modules-center
     "clock": {
         "format": "{:%a %d-%m-%Y %H:%M:%S}",
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "{calendar}",
         "interval": 1
     },
 
     // modules-right
     "custom/music-prev": {
-        "format": "",
+        "exec": "~/.config/waybar/music/prev.sh",
         "on-click": "playerctl previous",
-        "tooltip": false
+        "tooltip": false,
+        "interval": 1
     },
 
     "custom/music-playpause": {
@@ -53,13 +56,24 @@
     },
 
     "custom/music-next": {
-        "format": "",
+        "exec": "~/.config/waybar/music/next.sh",
         "on-click": "playerctl next",
-        "tooltip": false
+        "tooltip": false,
+        "interval": 1
     },
 
     "custom/music-title": {
         "exec": "~/.config/waybar/music/title.sh",
+        "max-length": 25,
+        "return-type": "json",
+        "interval": 1
+    },
+
+    "custom/music-progress": {
+        "exec": "~/.config/waybar/music/progress.sh",
+        "return-type": "percentage",
+        "format": "{value}",
+        "tooltip": false,
         "interval": 1
     },
 
@@ -73,6 +87,7 @@
 
     "bluetooth": {
         "format": " {status}",
+        "format-connected": " on",
         "tooltip": false,
         "on-click": "blueman-manager",
         "interval": 1
@@ -81,8 +96,8 @@
     "network": {
         "format-wifi": "  {signalStrength}%",
         "format-ethernet": "󰈀  {cidr}",
-        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
-        "format-disconnected": "󰖪  Disconnected",
+        "tooltip-format": "{essid}\n{ifname}: {ipaddr}/{cidr}\n\n {bandwidthUpOctets}\n {bandwidthDownOctets}",
+        "format-disconnected": "󰖪  disc",
         "on-click": "nm-connection-editor",
         "interval": 1
     },
@@ -110,6 +125,8 @@
             "charging": "",
             "discharging": ["", "", "", "", ""]
         },
+        
+        "tooltip-format": "time: {time}\nhealth: {health}%",
         "interval": 1
     }
 }

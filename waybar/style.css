@@ -45,6 +45,10 @@ window#waybar {
     transition: background-color 0.3s ease-in-out;
 }
 
+#custom-music-title {
+    font-weight: bold;
+}
+
 #custom-music-prev {
     border-top-left-radius: 8px; /* Only round the left border on the first item */
     border-bottom-left-radius: 8px;
@@ -60,6 +64,23 @@ window#waybar {
     border-radius: 8px;
     padding: 5px 10px;
     margin-left: 5px;
+    min-width: 50px;
+}
+
+#network.disconnected {
+    color: #ff5555;
+}
+
+#memory {
+    min-width: 80px;
+}
+
+#bluetooth.connected, #battery.discharging {
+    color: #55ff55;
+}
+
+#battery.warning {
+    color: #ffa500;
 }
 
 #battery.critical {
@@ -68,10 +89,6 @@ window#waybar {
 
 #battery.charging {
     color: #ffff55;
-}
-
-#battery.discharging {
-    color: #55ff55;
 }
 
 #custom-volume, #bluetooth, #network {
