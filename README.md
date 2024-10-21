@@ -1,5 +1,10 @@
 # dotfiles
 
+## General informations
+- WM: [hyprland](https://hyprland.org/)
+- bar: [waybar](https://github.com/Alexays/Waybar)
+- launcher: [rofi](https://github.com/davatorium/rofi)
+
 ## Arch install
 
 ```bash
@@ -8,20 +13,7 @@ pacman -S archlinux-keyring
 archinstall
 ```
 
-format du disque : ext4 <br>
-config reseau : NetworkManager <br>
-packages additionels : git neovim
-
-## first boot
-
-- check la co
-- installer [yay](https://github.com/Jguer/yay)
-- installer zsh (avec yay) et [oh-my-zsh](https://ohmyz.sh/#install) (avec curl)
-- `yay -S xorg-server xorg-xinit alacritty awesome`
-
-## first awesome boot
-
-```bash
-echo 'exec awesome' > ~/.xinitrc
-startx
-```
+disk format : ext4 <br>
+network config : NetworkManager <br>
+additional packages : git neovim
+yay -S xorg-server xorg-xinit alacritty hyprland`
