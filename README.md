@@ -1,6 +1,7 @@
 # dotfiles
 
 ## General informations
+- OS: [Arch Linux](https://archlinux.org/)
 - WM: [hyprland](https://hyprland.org/)
 - bar: [waybar](https://github.com/Alexays/Waybar)
 - launcher: [rofi](https://github.com/davatorium/rofi)
