@@ -67,7 +67,7 @@ window#waybar {
     min-width: 50px;
 }
 
-#network.disconnected {
+#network.disconnected, #bluetooth.disabled {
     color: #ff5555;
 }
 

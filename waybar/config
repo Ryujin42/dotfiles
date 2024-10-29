@@ -12,7 +12,6 @@
         "custom/music-playpause",
         "custom/music-next",
         "custom/music-title",
-        "custom/music-progress",
         "custom/volume",
         "bluetooth",
         "network",
@@ -69,14 +68,6 @@
         "interval": 1
     },
 
-    "custom/music-progress": {
-        "exec": "~/.config/waybar/music/progress.sh",
-        "return-type": "percentage",
-        "format": "{value}",
-        "tooltip": false,
-        "interval": 1
-    },
-
     "custom/volume": {
         "exec": "~/.config/waybar/volume.sh",
         "on-click": "pamixer -t",
@@ -88,6 +79,7 @@
     "bluetooth": {
         "format": " {status}",
         "format-connected": " on",
+        "format-disabled": " off",
         "tooltip": false,
         "on-click": "blueman-manager",
         "interval": 1
