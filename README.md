@@ -21,3 +21,18 @@ disk format : ext4 <br>
 network config : NetworkManager <br>
 additional packages : git neovim
 yay -S xorg-server xorg-xinit alacritty hyprland`
+
+
+## first boot
+- check keyboard layout, locale, internet connexion etc
+- cloning this repo 
+```bash
+git clone https://github.com/Ryujin42/dotfiles.git
+```
+- run the installation script (symlinks && yay, zsh, and utilities packages installation)
+```bash
+cd ~/dotfiles
+chmod -x ./install.sh 
+./install.sh
+```
+
