@@ -18,4 +18,6 @@ end
 
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
+vim.opt.relativenumber = true
+vim.opt.number = true
 require "plugins"

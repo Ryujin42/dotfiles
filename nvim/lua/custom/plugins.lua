@@ -17,6 +17,7 @@ local plugins = {
                 "mypy",
                 "phpactor",
                 "nvim-ts-autotag",
+                "ts_ls",
             },
         },
     },

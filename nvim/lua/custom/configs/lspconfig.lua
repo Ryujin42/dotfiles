@@ -22,3 +22,10 @@ lspconfig.phpactor.setup({
   filetypes = { "php", "phtml" },
   root_dir = lspconfig.util.root_pattern("composer.json"),
 })
+
+lspconfig.ts_ls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+})
+
