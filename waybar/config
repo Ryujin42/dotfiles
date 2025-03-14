@@ -63,6 +63,7 @@
 
     "custom/music-title": {
         "exec": "~/.config/waybar/music/title.sh",
+        "escape": true,
         "max-length": 25,
         "return-type": "json",
         "interval": 1
