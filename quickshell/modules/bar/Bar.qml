@@ -11,7 +11,7 @@ import "components" as C
 PanelWindow {
   id: bar
 
-  width: Theme.barWidth
+  implicitWidth: Theme.barWidth
   color: Theme.backgroundColor
   visible: true
 
@@ -22,14 +22,21 @@ PanelWindow {
   }
 
   ColumnLayout {
-    anchors.fill: parent
-    anchors.margins: Theme.margin
+    anchors{
+      fill: parent
+      margins: Theme.spacingMd
+      topMargin: Theme.spacingLg
+      bottomMargin: Theme.spacingLg
+    }
 
     // -- TOP -- //
     ColumnLayout {
       Layout.fillWidth: true
+      spacing: Theme.spacingXl
 
-      C.Launcher { Layout.fillWidth: true; Layout.alignment: Qt.AlignHCenter; Layout.preferredHeight: Theme.iconSize; Layout.preferredWidth: Theme.iconSize; }
+      C.Launcher { Layout.fillWidth: true; Layout.alignment: Qt.AlignHCenter; Layout.preferredHeight: Theme.iconSizeMd; Layout.preferredWidth: Theme.iconSizeMd; }
+      C.Workspaces { Layout.fillWidth: true; Layout.alignment: Qt.AlignHCenter; Layout.preferredWidth: Theme.iconSizeMd; }
+
     }
 
     // -- Spacer -- //
@@ -39,9 +46,10 @@ PanelWindow {
     // -- BOTTOM -- //
     ColumnLayout {
       Layout.fillHeight: true
-      spacing: theme.Spacing
+      spacing: Theme.spacingXl
 
       C.Clock { Layout.fillWidth: true; Layout.alignment: Qt.AlignHCenter }
+      C.Power { Layout.fillWidth: true; Layout.alignment: Qt.AlignHCenter; Layout.preferredHeight: Theme.iconSizeMd; Layout.preferredWidth: Theme.iconSizeMd }
     }
   }
 }

@@ -17,7 +17,7 @@ Column {
     Label {
         id: hourLabel
         text: Qt.formatDateTime(clock.now, "HH")
-        font.pixelSize: 20
+        font.pixelSize: Theme.fontSizeLg
         font.family: Theme.fontFamily
         color: Theme.textPrimary
         horizontalAlignment: Text.AlignVCenter
@@ -27,7 +27,7 @@ Column {
     Label {
         id: minuteLabel
         text: Qt.formatDateTime(clock.now, "mm")
-        font.pixelSize: Theme.clockFontSize
+        font.pixelSize: Theme.fontSizeLg
         font.family: Theme.fontFamily
         color: Theme.textPrimary
         horizontalAlignment: Text.AlignVCenter
@@ -37,7 +37,7 @@ Column {
    Label {
         id: dateLabel
         text: Qt.formatDateTime(clock.now, "dd/MM")
-        font.pixelSize: Theme.dateFontSize
+        font.pixelSize: Theme.fontSizeSm
         font.family: Theme.fontFamily
         color: Theme.textPrimary
         horizontalAlignment: Text.AlignVCenter
@@ -47,7 +47,7 @@ Column {
     Label {
         id: yearLabel
         text: Qt.formatDateTime(clock.now, "yyyy")
-        font.pixelSize: Theme.dateFontSize
+        font.pixelSize: Theme.fontSizeSm
         font.family: Theme.fontFamily
         color: Theme.textPrimary
         horizontalAlignment: Text.AlignVCenter

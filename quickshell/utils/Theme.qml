@@ -8,39 +8,63 @@ import QtQuick
 Singleton {
     id: root
 
-    // ===== Base roles =====
-    property color backgroundColor  : "#faaaac"   // base
-    property color surfaceColor     : "#363a4f"   // surface0
-    property color borderColor      : "#494d64"   // surface1
-
-    // ===== Text roles =====
-    property color textPrimary      : "#0a0903"   // text
-    property color textSecondary    : "#a5adcb"   // subtext0
-    property color textDisabled     : "#6e738d"   // overlay0
+    property bool isDarkTheme       : false
 
     // ===== Accent roles =====
-    property color accentColor      : "#e4f3fa"   // blue
-    property color accentAltColor   : "#c6a0f6"   // mauve
+    property color accentColor      : "#faaaac"
+    property color accentAltColor   : "#ffdf97"
+
+    // ===== Base roles =====
+    property color backgroundColor  : isDarkTheme ? Qt.darker(accentColor, 2) : Qt.lighter(accentColor, 1.3)   // base
+    property color buttonColor      : isDarkTheme ? Qt.darker(accentColor, 1.2) : Qt.lighter(accentColor, 1.2)   // surface0
+
+    // ===== Text roles =====
+    property color textPrimary      : isDarkTheme ? Qt.lighter(accentColor, 5) : Qt.darker(accentColor, 3)   // text
+    property color textSecondary    : isDarkTheme ? Qt.lighter(accentColor, 3) : Qt.darker(accentColor, 1.1)
+    property color textDisabled     : "#6e738d"
 
     // ===== Semantic roles =====
-    property color successColor     : "#a6da95"   // green
-    property color warningColor     : "#eed49f"   // yellow
-    property color errorColor       : "#ed8796"   // red
-    property color infoColor        : "#91d7e3"   // sky
+    property color successColor     : "#a6da95"
+    property color warningColor     : "#eed49f"
+    property color errorColor       : "#ed8796"
+    property color infoColor        : "#91d7e3"
 
     // ===== Special UI roles =====
-    property color highlightColor   : "#f5bde6"   // pink
-    property color mutedColor       : "#939ab7"   // overlay2
+    property color highlightColor   : "#f5bde6"
+    property color mutedColor       : "#ffdf97"
+  
+    // Sizing (widths, heights)
+    property int screenWidth    : 1920
+    property int barWidth       : 56   
+    property int iconSizeMd     : 32
+    property int iconSizeLg     : 56   
 
-    // ===== Layout / sizing =====
-    property int barWidth            : 56
-    property int barRadius           : 10
-    property int spacing             : 6
-    property int margin              : 8
-    property int clockFontSize       : 20
-    property int dateFontSize        : 12
-    property int iconSize            : 40
-    property int iconFontSize        : 32
-    property string fontFamily       : "Maple Mono"
+    // Radius (corner rounding)
+    property int roundedSm      : 10   
+    property int roundedMd      : 20   
+    property int roundedLg      : 32   
+
+    // Border
+    property int borderWidthSm  : 2
+    property int borderWidthMd  : 6
+    property int borderWidthLg  : 10   
+
+    // Spacing & margins
+    property int spacingXs      : 4
+    property int spacingSm      : 6    
+    property int spacingMd      : 8    
+    property int spacingLg      : 12   
+    property int spacingXl      : 24   
+
+    // Typography
+    property int fontSizeSm     : 12   
+    property int fontSizeMd     : 16   
+    property int fontSizeLg     : 20   
+    property int fontSizeXl     : 32   
+    property string fontFamily  : "Maple Mono"
+
+
+    // ==== Wallpaper ====
+    readonly property string wallpaperSource  : "file:///home/ryujin/dotfiles/src/wallpaper/phone.jpg"
 }
 
