@@ -70,7 +70,7 @@ ZSH_THEME="bira"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-completions) # zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,64 +105,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# changing terminal bg color when in a docker session
-
-DARK_PASTEL_PALETTE=(
-    "#3B3055"  # Dark purple
-    "#2C2E4B"  # Deep blue
-    "#3A4A5A"  # Dark teal
-    "#4A3445"  # Dark pink
-    "#334455"  # Muted dark blue-green
-    "#2E3C55"  # Dark navy blue
-    "#4B3C4D"  # Dark mauve
-    "#3C405A"  # Muted dark indigo
-)
-
-generate_color_from_name() {
-    local name="$1"
-    local hash
-    hash=$(echo -n "$name" | cksum | cut -d' ' -f1)
-
-    local palette_size=${#DARK_PASTEL_PALETTE[@]}
-    local index=$((hash % palette_size))
-
-    echo "${DARK_PASTEL_PALETTE[$index]}"
-}
-
-is_docker() {
-    grep -qE '/docker/' /proc/1/cgroup
-}
-
-is_docker() {
-    grep -qE '/docker/' /proc/1/cgroup
-}
-
-change_alacritty_bg() {
-    if is_docker; then
-        local container_name
-        container_name=$(get_docker_container_name)
-        local bg_color
-        bg_color=$(generate_color_from_name "$container_name")
-
-        echo -e "\033]11;${bg_color}\007"
-    else
-        echo -e "\033]11;#1E1E2E\007"
-    fi
-}
-
-set_prompt() {
-    change_alacritty_bg
-
-    PROMPT='%F{blue}%n@%m %F{yellow}%~%f %# '
-
-    if is_docker; then
-        local container_name
-        container_name=$(get_docker_container_name)
-        PROMPT='%F{cyan}%n@%m (Docker: %F{green}'"$container_name"'%f) %F{yellow}%~%f %# '
-    fi
-}
-
-precmd() { set_prompt }
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
@@ -174,6 +116,6 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 startx
 fi
 
-setxkbmap -layout fr,us -option grp:alt_shift_toggle
-xinput set-prop "$(xinput list --name-only | grep -i touch)" "libinput Tapping Enabled" 1
-
+# exa commands
+alias l='eza -l --icons'
+alias lla='l -a'
