@@ -72,6 +72,7 @@
     "custom/volume": {
         "exec": "~/.config/waybar/volume.sh",
         "on-click": "pamixer -t",
+        "on-right-click": "pavucontrol",
         "on-scroll-up": "pamixer --increase 5",
         "on-scroll-down": "pamixer --decrease 5",
         "interval": 1
