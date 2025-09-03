@@ -29,3 +29,9 @@ lspconfig.ts_ls.setup({
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
 })
 
+lspconfig.qmlls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "qml" },
+})
+
