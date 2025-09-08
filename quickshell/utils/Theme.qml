@@ -35,6 +35,7 @@ Singleton {
   
     // Sizing (widths, heights)
     property int screenWidth    : 1920
+    property int screenHeight   : 1080
     property int barWidth       : 56   
     property int iconSizeMd     : 32
     property int iconSizeLg     : 56   
@@ -43,7 +44,7 @@ Singleton {
 
     // Radius (corner rounding)
     property int roundedSm      : 10   
-    property int roundedMd      : 20   
+    property int roundedMd      : 17   
     property int roundedLg      : 32   
 
     // Border
