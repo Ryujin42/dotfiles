@@ -7,7 +7,7 @@ import qs.utils
 Column {
     id: clock
     property var now: new Date()
-    spacing: 2
+    spacing: Theme.spacingXs
 
     anchors.horizontalCenter: parent ? undefined : undefined
     width: parent ? parent.width : implicitWidth

@@ -35,6 +35,34 @@ PanelWindow {
     anchors.leftMargin: Theme.barWidth
 
   // ==== WALLPAPER ==== //
+    Rectangle {
+      id: border
+      anchors.fill: parent
+      color: Theme.textPrimary
+      visible: false
+    }
+
+    // ==== ROUNDED CORNERS ==== //
+    Rectangle {
+      id: borderMask
+      anchors.fill: parent
+      radius: Theme.roundedMd
+      visible: false
+    }
+
+    OpacityMask {
+      anchors.fill: parent
+      source: border
+      maskSource: borderMask
+    }
+  }
+
+  Item {
+    anchors.fill: parent
+    anchors.margins: Theme.borderWidthLg + Theme.borderWidthSm
+    anchors.leftMargin: Theme.barWidth + Theme.borderWidthSm
+
+  // ==== WALLPAPER ==== //
     Image {
       id: wallpaperImg
       anchors.fill: parent
@@ -47,16 +75,16 @@ PanelWindow {
 
     // ==== ROUNDED CORNERS ==== //
     Rectangle {
-      id: mask
+      id: wpMask
       anchors.fill: parent
-      radius: Theme.roundedMd
+      radius: Theme.roundedMd - Theme.borderWidthSm
       visible: false
     }
 
     OpacityMask {
       anchors.fill: parent
       source: wallpaperImg
-      maskSource: mask
+      maskSource: wpMask
     }
   }
 }

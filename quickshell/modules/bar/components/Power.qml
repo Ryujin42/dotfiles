@@ -2,10 +2,12 @@ import QtQuick
 import QtQuick.Controls
 import Quickshell
 import Quickshell.Io
+
 import qs.utils
+import qs.popups
 
 Button {
-  id: launcher
+  id: power
   width: Theme.IconSizeMd
   height: Theme.IconSizeMd
 
@@ -20,10 +22,5 @@ Button {
     font.pixelSize: Theme.fontSizeXl
   }
 
-  Process {
-    id: wofiTrigger
-    command: ["wofi", "--show", "drun"]
-  }
-
-  onClicked: wofiTrigger.running = true
+  onClicked: PowerMenu.visible = !PowerMenu.visible
 }
