@@ -39,8 +39,8 @@ Singleton {
     property int barWidth       : 56   
     property int iconSizeMd     : 32
     property int iconSizeLg     : 56   
-    property int powerMenuWidth : 500
-    property int powerMenuHeight: 500
+    property int powerMenuWidth : 75
+    property int powerMenuHeight: 400
 
     // Radius (corner rounding)
     property int roundedSm      : 10   

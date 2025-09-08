@@ -4,7 +4,6 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
 import Quickshell.Widgets
-import Quickshell.Services.UPower
 
 import qs.utils
 import qs.services
@@ -22,18 +21,6 @@ Rectangle {
   ColumnLayout {
     id: root
     spacing: Theme.spacingSm
-
-    readonly property int percent: {
-      const d = UPower.displayDevice
-      if (!d || isNaN(d.percentage)) return -1
-      return Math.round(d.percentage * 100)
-    }
-
-    readonly property bool isCharging: {
-      const d = UPower.displayDevice
-      if (d && d.state.toString() === "Charging") return true
-      return false
-    }
 
     anchors {
       fill: parent
@@ -108,7 +95,6 @@ Rectangle {
       }
 
       Label {
-        id: batteryButtonText
         anchors.centerIn: parent
         text: "100" //"󰁹"
         color: Theme.textPrimary
@@ -137,10 +123,6 @@ Rectangle {
           Network.connType === "ethernet" ? "󰈀" :
           !Network.enable ? "󰤫" :
           Network.strength>80 ? "󰤨" : "󰤯"
-
-          if (root.isCharging) batteryButtonText.text = "C"
-          if (!root.isCharging) batteryButtonText.text = root.percent
-
 
       }
     }

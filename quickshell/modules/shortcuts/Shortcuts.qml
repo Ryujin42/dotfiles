@@ -1,17 +1,22 @@
 import Quickshell
 import Quickshell.Io 
-import Quickshell.Hyprland
+import Quickshell.Hyprland as H
 
-import qs.utils
+import qs.popups
 
 Scope {
   id: root
 
-  GlobalShortcut {
+  H.GlobalShortcut {
     name: "session"
     description: "Toggle session menu"
     onPressed: {
       PowerMenu.visible = !PowerMenu.visible
     }
+  }
+
+  function toggleSession() {
+    PowerMenu.visible = !PowerMenu.visible
+    PowerMenuBorder = !PowerMenuBorder.visible
   }
 }

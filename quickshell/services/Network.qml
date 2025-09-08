@@ -16,14 +16,14 @@ Singleton {
   function update() {
     updateConnectionType;
     updateNetworkStrength;
-    console.log(root.connType);
-    console.log(root.active);
-    console.log(root.strength);
+    // console.log(root.connType);
+    // console.log(root.active);
+    // console.log(root.strength);
   }
 
   Process {
     id: updateConnectionType
-    command: ["sh", "-c", "nmcli -t -f TYPE,STATE,NAME c show --active", "|", "-n", "'1p'"]
+    command: ["sh", "-c", "nmcli", "-t", "-f", "TYPE,STATE,NAME", "c", "show", "--active", "|", "-n", "'1p'"]
     stdout: StdioCollector {
       onStreamFinished: {
         const parts = (this.text || "").trim().split(":")
@@ -40,7 +40,7 @@ Singleton {
 
   Process {
     id: updateNetworkStrength
-    command: ["sh", "-c", "nmcli -f IN-USE,SIGNAL,SSID device wifi | awk '/^\*/{if (NR!=1) {print $2}}'"]
+    command: ["sh", "-c", "nmcli -f IN-USE,SIGNAL,SSID", "device", "wifi", "|", "awk", "'/^\*/{if (NR!=1) {print $2}}'"]
     stdout: SplitParser {
       onRead: data => {
         root.strength = parseInt(data);
