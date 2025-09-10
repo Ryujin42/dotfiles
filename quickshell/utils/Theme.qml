@@ -40,7 +40,7 @@ Singleton {
     property int iconSizeMd     : 32
     property int iconSizeLg     : 56   
     property int powerMenuWidth : 75
-    property int powerMenuHeight: 400
+    property int powerMenuHeight: 350
 
     // Radius (corner rounding)
     property int roundedSm      : 10   
@@ -68,6 +68,7 @@ Singleton {
 
 
     // ==== Wallpaper ====
-    readonly property string wallpaperSource  : "file:///home/ryujin/dotfiles/src/wallpaper/phone.jpg"
+    readonly property string wallpaperSource  : "file:///home/ryujin/dotfiles/src/wallpaper/suummit.gif"
+    readonly property string powerMenuImageSource  : "file:///home/ryujin/dotfiles/src/gifs/bounce.gif"
 }
 

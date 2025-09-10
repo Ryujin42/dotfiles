@@ -64,7 +64,7 @@ PanelWindow {
     anchors.leftMargin: Theme.barWidth + Theme.borderWidthSm
 
   // ==== WALLPAPER ==== //
-    Image {
+    AnimatedImage {
       id: wallpaperImg
       anchors.fill: parent
       source: Theme.wallpaperSource
