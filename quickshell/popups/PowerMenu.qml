@@ -55,21 +55,20 @@ PanelWindow {
     anchors {
       fill: parent
       margins: Theme.spacingLg
-      leftMargin: 34
     }
 
-    spacing: Theme.spacingXl
+    spacing: Theme.spacingLg
 
     // -- 1. LOGOUT -- //
     Button {
       id: logout
-      width: Theme.iconSizeLg
-      height: Theme.iconSizeLg
+      implicitWidth: Theme.iconSizeLg
+      implicitHeight: Theme.iconSizeLg
 
       background: Rectangle {
         anchors.centerIn: parent
-        width: Theme.iconSizeLg
-        height: Theme.iconSizeLg
+        implicitWidth: Theme.iconSizeLg
+        implicitHeight: Theme.iconSizeLg
         color: Theme.buttonColor
         radius: Theme.roundedMd
       }
@@ -83,7 +82,7 @@ PanelWindow {
 
       Process {
         id: logoutTrigger
-        command: ["wofi", "--show", "drun"]
+        command: ["hyprctl", "dispatch", "exit"]
       }
 
       onClicked: logoutTrigger.running = true
@@ -92,13 +91,13 @@ PanelWindow {
         // -- 2. SHUTDOWN -- //
     Button {
       id: shutdown
-      width: Theme.iconSizeLg
-      height: Theme.iconSizeLg
+      implicitWidth: Theme.iconSizeLg
+      implicitHeight: Theme.iconSizeLg
 
       background: Rectangle {
         anchors.centerIn: parent
-        width: Theme.iconSizeLg
-        height: Theme.iconSizeLg
+        implicitWidth: Theme.iconSizeLg
+        implicitHeight: Theme.iconSizeLg
         color: Theme.buttonColor
         radius: Theme.roundedMd
       }
@@ -112,51 +111,37 @@ PanelWindow {
 
       Process {
         id: shutdownTrigger
-        command: ["wofi", "--show", "drun"]
+        command: ["shutdown", "now"]
       }
 
-      onClicked: logoutTrigger.running = true
+      onClicked: shutdownTrigger.running = true
     }
 
     // -- 3. IMAGE -- //
-    Button {
-      id: image
-      width: Theme.iconSizeLg
-      height: Theme.iconSizeLg
+    Rectangle {
+      anchors.centerIn: parent
+      implicitWidth: Theme.iconSizeLg
+      implicitHeight: Theme.iconSizeLg
+      color: "transparent"
+      radius: Theme.roundedMd
 
-      background: Rectangle {
-        anchors.centerIn: parent
+      AnimatedImage {
         width: Theme.iconSizeLg
         height: Theme.iconSizeLg
-        color: Theme.buttonColor
-        radius: Theme.roundedMd
+        source: Theme.powerMenuImageSource
       }
-
-      Text {
-        anchors.centerIn: parent
-        text: "󰋩"
-        color: Theme.textPrimary
-        font.pixelSize: Theme.fontSizeXl
-      }
-
-      Process {
-        id: imageTrigger
-        command: ["wofi", "--show", "drun"]
-      }
-
-      onClicked: logoutTrigger.running = true
     }
 
     // -- 4. SUSPEND -- //
     Button {
       id: suspend
-      width: Theme.iconSizeLg
-      height: Theme.iconSizeLg
+      implicitWidth: Theme.iconSizeLg
+      implicitHeight: Theme.iconSizeLg
 
       background: Rectangle {
         anchors.centerIn: parent
-        width: Theme.iconSizeLg
-        height: Theme.iconSizeLg
+        implicitWidth: Theme.iconSizeLg
+        implicitHeight: Theme.iconSizeLg
         color: Theme.buttonColor
         radius: Theme.roundedMd
       }
@@ -170,22 +155,22 @@ PanelWindow {
 
       Process {
         id: suspendTrigger
-        command: ["wofi", "--show", "drun"]
+        command: ["systemctl", "suspend"]
       }
 
-      onClicked: logoutTrigger.running = true
+      onClicked: hibernateTrigger.running = true
     }
 
     // -- 5. REBOOT -- //
     Button {
       id: reboot
-      width: Theme.iconSizeLg
-      height: Theme.iconSizeLg
+      implicitWidth: Theme.iconSizeLg
+      implicitHeight: Theme.iconSizeLg
 
       background: Rectangle {
         anchors.centerIn: parent
-        width: Theme.iconSizeLg
-        height: Theme.iconSizeLg
+        implicitWidth: Theme.iconSizeLg
+        implicitHeight: Theme.iconSizeLg
         color: Theme.buttonColor
         radius: Theme.roundedMd
       }
@@ -199,10 +184,10 @@ PanelWindow {
 
       Process {
         id: rebootTrigger
-        command: ["wofi", "--show", "drun"]
+        command: ["systemctl", "reboot"]
       }
 
-      onClicked: logoutTrigger.running = true
+      onClicked: rebootTrigger.running = true
     }
   }
 }
