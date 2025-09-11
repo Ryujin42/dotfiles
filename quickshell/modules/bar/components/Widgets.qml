@@ -13,7 +13,7 @@ Rectangle {
   color: Theme.buttonColor
   radius: Theme.roundedMd
 
-  implicitHeight: 120
+  implicitHeight: 140
   
   anchors.horizontalCenter: parent ? undefined : undefined
   width: parent ? parent.width : implicitWidth
@@ -21,7 +21,7 @@ Rectangle {
   
   ColumnLayout {
     id: root
-    spacing: Theme.spacingSm
+    spacing: 0
 
     readonly property int percent: {
       const d = UPower.displayDevice
@@ -29,9 +29,9 @@ Rectangle {
       return Math.round(d.percentage * 100)
     }
 
-    readonly property bool isCharging: {
+    readonly property real isCharging: {
       const d = UPower.displayDevice
-      if (d && d.state.toString() === "Charging") return true
+      if (d && d.state === 4) return true
       return false
     }
 
@@ -42,16 +42,15 @@ Rectangle {
       horizontalCenter: parent ? undefined : undefined
     }
 
-
     // ==== NETWORK ==== //
     Button {
       id: networkButton
-      width: Theme.IconSizeMd
-      height: Theme.IconSizeMd
+      implicitWidth: Theme.iconSizeMd
+      implicitHeight: Theme.iconSizeMd
       anchors.horizontalCenter: parent.horizontalCenter
 
       background: Rectangle {
-        color: Theme.backgroundColor
+        color: "transparent"
       }
 
       Text {
@@ -73,12 +72,12 @@ Rectangle {
     // ==== BLUETOOTH ==== //
     Button {
       id: bluetoothButton
-      width: Theme.IconSizeMd
-      height: Theme.IconSizeMd
+      implicitWidth: Theme.iconSizeMd
+      implicitHeight: Theme.iconSizeMd
       anchors.horizontalCenter: parent.horizontalCenter
 
       background: Rectangle {
-        color: Theme.backgroundColor
+        color: "transparent"
       }
 
       Text {
@@ -99,24 +98,20 @@ Rectangle {
     // ==== BATTERY ==== //
     Button {
       id: batteryButton
-      width: 80
-      height: Theme.IconSizeMd
-      anchors.horizontalCenter: parent
+      implicitWidth: Theme.iconSizeMd
+      implicitHeight: Theme.iconSizeMd
+      anchors.horizontalCenter: parent.horizontalCenter
 
       background: Rectangle {
-        color: "red" // Theme.backgroundColor
+        color: "transparent"
       }
 
       Label {
         id: batteryButtonText
         anchors.centerIn: parent
-        text: "100" //"󰁹"
+        text: "󰁹"
         color: Theme.textPrimary
-        font.pixelSize: Theme.fontSizeMd
-        font.family: Theme.fontFamily
-        horizontalAlignment: Text.AlignVCenter
-        anchors.horizontalCenter: parent.horizontalCenter
-
+        font.pixelSize: Theme.fontSizeXl
       }
 
       Process {
@@ -138,9 +133,33 @@ Rectangle {
           !Network.enable ? "󰤫" :
           Network.strength>80 ? "󰤨" : "󰤯"
 
-          if (root.isCharging) batteryButtonText.text = "C"
-          if (!root.isCharging) batteryButtonText.text = root.percent
+          // ==== BATTERY ==== //
+          if (root.isCharging) batteryButtonText.text = 
+            (root.percent === 100) ? "󰂅" :
+            (root.percent >= 90) ? "󰂋" :
+            (root.percent >= 80) ? "󰂊" :
+            (root.percent >= 70) ? "󰢞" :
+            (root.percent >= 60) ? "󰂉" :
+            (root.percent >= 50) ? "󰢝" :
+            (root.percent >= 40) ? "󰂈" :
+            (root.percent >= 30) ? "󰂇" :
+            (root.percent >= 20) ? "󰂆" :
+            (root.percent >= 10) ? "󰢜" : "󰢟"
 
+          if (!root.isCharging) batteryButtonText.text = 
+            (root.percent === 100) ? "󰁹" :
+            (root.percent >= 90) ? "󰂂" :
+            (root.percent >= 80) ? "󰂁" :
+            (root.percent >= 70) ? "󰂀" :
+            (root.percent >= 60) ? "󰁿" :
+            (root.percent >= 50) ? "󰁾" :
+            (root.percent >= 40) ? "󰁽" :
+            (root.percent >= 30) ? "󰁼" :
+            (root.percent >= 20) ? "󰁻" :
+            (root.percent >= 10) ? "󰁺" : "󰂎"
+
+          if (!root.isCharging && root.percent < 30) batteryButtonText.color = Theme.warningColor
+          if (!root.isCharging && root.percent < 20) batteryButtonText.color = Theme.errorColor
 
       }
     }
