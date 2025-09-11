@@ -158,7 +158,7 @@ PanelWindow {
         command: ["systemctl", "suspend"]
       }
 
-      onClicked: hibernateTrigger.running = true
+      onClicked: suspendTrigger.running = true
     }
 
     // -- 5. REBOOT -- //
