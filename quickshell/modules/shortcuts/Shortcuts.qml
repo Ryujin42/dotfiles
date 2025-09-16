@@ -15,8 +15,11 @@ Scope {
     }
   }
 
-  function toggleSession() {
-    PowerMenu.visible = !PowerMenu.visible
-    PowerMenuBorder = !PowerMenuBorder.visible
+  H.GlobalShortcut {
+    name: "dashboard"
+    description: "Toggle dashboard menu"
+    onPressed: {
+      DashboardMenu.visible = !DashboardMenu.visible
+    }
   }
 }

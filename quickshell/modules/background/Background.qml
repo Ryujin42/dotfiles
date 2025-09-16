@@ -28,5 +28,6 @@ PanelWindow {
 
   
   B.BackgroundAll {}
+  // B.BackgroundLeft{}
   B.BackgroundRight {}
 }

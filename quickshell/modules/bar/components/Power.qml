@@ -17,13 +17,10 @@ Button {
 
   Text {
     anchors.centerIn: parent
-    text: ""
+    text: "⏻"
     color: Theme.textPrimary
-    font.pixelSize: Theme.fontSizeXl
+    font.pixelSize: Theme.fontSizeXXl
   }
 
   onClicked: PowerMenu.visible = !PowerMenu.visible
-  Process {
-
-  }
 }

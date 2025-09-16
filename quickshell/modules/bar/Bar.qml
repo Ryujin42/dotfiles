@@ -48,8 +48,8 @@ PanelWindow {
       Layout.fillHeight: true
       spacing: Theme.spacingXl
 
-      C.Clock { Layout.fillWidth: true; Layout.alignment: Qt.AlignHCenter }
       C.Widgets { Layout.fillWidth: true; Layout.alignment: Qt.AlignHCenter; Layout.preferredWidth: Theme.iconSizeMd; }
+      C.Clock { Layout.fillWidth: true; Layout.alignment: Qt.AlignHCenter }
       C.Power { Layout.fillWidth: true; Layout.alignment: Qt.AlignHCenter; Layout.preferredHeight: Theme.iconSizeMd; Layout.preferredWidth: Theme.iconSizeMd }
     }
   }

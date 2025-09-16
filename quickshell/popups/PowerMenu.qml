@@ -11,7 +11,7 @@ import Quickshell.Io
 
 
 PanelWindow {
-  id: powerMenuBorder
+  id: dashboardMenuBorder
   visible: false
   implicitWidth: Theme.powerMenuWidth
   implicitHeight: Theme.powerMenuHeight

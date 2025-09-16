@@ -25,7 +25,7 @@ Singleton {
 
     // ===== Semantic roles =====
     property color successColor     : "#a6da95"
-    property color warningColor     : "#eed49f"
+    property color warningColor     : "#de843f"
     property color errorColor       : "#ed8796"
     property color infoColor        : "#91d7e3"
 
@@ -39,8 +39,12 @@ Singleton {
     property int barWidth       : 56   
     property int iconSizeMd     : 32
     property int iconSizeLg     : 56   
+
     property int powerMenuWidth : 75
     property int powerMenuHeight: 350
+
+    property int dashboardMenuWidth: 900
+    property int dashboardMenuHeight: 400
 
     // Radius (corner rounding)
     property int roundedSm      : 10   
@@ -63,12 +67,15 @@ Singleton {
     property int fontSizeSm     : 12   
     property int fontSizeMd     : 16   
     property int fontSizeLg     : 20   
-    property int fontSizeXl     : 32   
+    property int fontSizeXl     : 32
+    property int fontSizeXXl    : 64
     property string fontFamily  : "Maple Mono"
 
 
     // ==== Wallpaper ====
     readonly property string wallpaperSource  : "file:///home/ryujin/dotfiles/src/wallpaper/suummit.gif"
     readonly property string powerMenuImageSource  : "file:///home/ryujin/dotfiles/src/gifs/bounce.gif"
+    readonly property string dashboardProfileImageSource  : "file:///home/ryujin/dotfiles/src/imgs/normal.png"
+
 }
 

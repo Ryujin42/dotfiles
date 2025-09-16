@@ -31,7 +31,7 @@ Rectangle {
 
     readonly property real isCharging: {
       const d = UPower.displayDevice
-      if (d && d.state === 4) return true
+      if (d && d.timeToEmpty === 0) return true
       return false
     }
 
@@ -158,6 +158,7 @@ Rectangle {
             (root.percent >= 20) ? "󰁻" :
             (root.percent >= 10) ? "󰁺" : "󰂎"
 
+          batteryButtonText.color = Theme.textPrimary
           if (!root.isCharging && root.percent < 30) batteryButtonText.color = Theme.warningColor
           if (!root.isCharging && root.percent < 20) batteryButtonText.color = Theme.errorColor
 
