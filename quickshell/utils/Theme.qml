@@ -73,7 +73,7 @@ Singleton {
 
 
     // ==== Wallpaper ====
-    readonly property string wallpaperSource  : "file:///home/ryujin/dotfiles/src/wallpaper/suummit.gif"
+    readonly property string wallpaperSource  : "file:///home/ryujin/dotfiles/src/wallpaper/black.png" // "file:///home/ryujin/dotfiles/src/wallpaper/suummit.gif"
     readonly property string powerMenuImageSource  : "file:///home/ryujin/dotfiles/src/gifs/bounce.gif"
     readonly property string dashboardProfileImageSource  : "file:///home/ryujin/dotfiles/src/imgs/normal.png"
 

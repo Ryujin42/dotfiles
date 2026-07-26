@@ -23,7 +23,7 @@ local plugins = {
     },
 
     {
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         ft = { "python" },
         opts = function()
             return require "custom.configs.null-ls"

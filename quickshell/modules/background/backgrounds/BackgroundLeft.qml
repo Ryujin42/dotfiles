@@ -13,7 +13,7 @@ PanelWindow {
   visible: true
 
   anchors {
-    right: true
+    left: true
   }
 
   implicitWidth: Theme.borderWidthSm
@@ -30,10 +30,10 @@ PanelWindow {
   PanelWindow {
     visible: true
     anchors {
-      right: true
+      left: true
     }
     
-    implicitWidth: Theme.borderWidthLg
+    implicitWidth: 0
     implicitHeight: Theme.screenHeight - Theme.borderWidthLg*2 - 25
 
     color: "transparent"
@@ -44,3 +44,4 @@ PanelWindow {
     }
   }
 }
+

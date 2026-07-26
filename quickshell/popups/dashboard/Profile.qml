@@ -18,7 +18,9 @@ Rectangle {
     // width: (Theme.dashboardMenuHeight - Theme.spacingLg*3) / 3
 
     anchors {
-      margins: Theme.spacingXl
+      margins: Theme.spacingMd
+      topMargin: Theme.spacingXl
+      bottomMargin: Theme.spacingXl
       horizontalCenter: parent ? undefined : undefined
       fill: parent
     }

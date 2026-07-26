@@ -12,13 +12,13 @@ import Quickshell.Io
 import "dashboard" as D
 
 PanelWindow {
-  id: dashboardMenuBorder
+  id: launcherMenuBorder
   visible: false
   implicitWidth: Theme.dashboardMenuWidth
   implicitHeight: Theme.dashboardMenuHeight
 
 
-  anchors.top: true
+  anchors.bottom: true
 
   WlrLayershell.layer: WlrLayer.Overlay
   WlrLayershell.exclusionMode: ExclusionMode.Ignore
